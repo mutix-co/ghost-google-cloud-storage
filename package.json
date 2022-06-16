@@ -1,7 +1,7 @@
 {
   "scripts": {
     "eslint": "eslint src/**/*.js",
-    "build": "docker build -t mutix-ghost-gcs ."
+    "build": "docker build -t mutix/ghost-google-cloud-storage:5 ."
   },
   "devDependencies": {
     "eslint": "^8.17.0"

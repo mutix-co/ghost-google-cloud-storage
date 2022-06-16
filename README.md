@@ -3,7 +3,7 @@
 
 ## Usage
 
-1. create bucket and service account, then generate key.json and permission binding
+1. create bucket and service account, then generate key.json and permission binding (gcloud,gsutil CLI required)
 
 ```sh
 # fill variable inside script and run it
@@ -27,7 +27,7 @@ docker run -it --rm \
   -e storage__gcsFiles={} \
   -e DEBUG="cloud-storage-*" \
   -v "${PWD}"/key.json:/var/lib/ghost/key.json \
-  mutix-ghost-gcs
+  mutix/ghost-google-cloud-storage:5
 ```
 
 3. upload images, media, files to test configuration
