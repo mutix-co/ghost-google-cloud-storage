@@ -1,0 +1,5 @@
+node_modules
+*.log
+
+# generate from createBucket.sh
+key.json
