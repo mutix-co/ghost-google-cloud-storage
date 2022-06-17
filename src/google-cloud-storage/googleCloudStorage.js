@@ -4,6 +4,14 @@ const { Storage } = require('@google-cloud/storage');
 const StorageBase = require('ghost-storage-base');
 
 class GoogleCloudStorage extends StorageBase {
+  /**
+  *
+  * @param {object} config
+  * @param {string} config.keyFilename A File store credential information for bucket operations
+  * @param {string} config.bucketName Target bucket want to use
+  * @param {string} config.storagePath A prefix for filename
+  * @param {string} config.name The name for debug log
+  */
   constructor({ keyFilename, bucketName, storagePath, name }) {
     super();
     const instanceName = name || 'google-cloud-storage';
