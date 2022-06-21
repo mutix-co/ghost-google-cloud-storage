@@ -56,7 +56,7 @@ jobs:
         include:
           - version: 5
             file: Dockerfile
-          - version: alpine
+          - version: 5-alpine
             file: Dockerfile-alpine
     steps:
       -
