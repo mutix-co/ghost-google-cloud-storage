@@ -20,12 +20,17 @@ class GoogleCloudStorage extends StorageBase {
       GOOGLE_CLOUD_STORAGE_BUCKET,
       GOOGLE_CLOUD_STORAGE_SERVICE_ACCOUNT_KEY,
     } = process.env;
-    this.keyFilename = keyFilename || GOOGLE_CLOUD_STORAGE_SERVICE_ACCOUNT_KEY;
+
+    this.keyFilename = keyFilename || GOOGLE_CLOUD_STORAGE_SERVICE_ACCOUNT_KEY ;
+    let storageOptions = {};
+    if (this.keyFilename) {
+      if (!fs.existsSync(this.keyFilename)) throw Error('key file not exists', );
+      storageOptions["keyFilename"] = this.keyFilename;
+    }
+
+    this.storage = new Storage(storageOptions);
     this.bucketName = bucketName || GOOGLE_CLOUD_STORAGE_BUCKET;
-    if (!this.keyFilename) throw Error('keyFilename not set');
     if (!this.bucketName) throw Error('bucket name not set');
-    if (!fs.existsSync(this.keyFilename)) throw Error('key file not exists', );
-    this.storage = new Storage({ keyFilename: this.keyFilename });
     this.bucket = this.storage.bucket(this.bucketName);
     this.assetDomain = `${this.bucketName}.storage.googleapis.com`;
     this.storagePath = storagePath || '';
