@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "jest tests --passWithNoTests"
+    "test": "jest tests --passWithNoTests ./test/"
   },
   "dependencies": {
     "@google-cloud/storage": "^6.1.0",
