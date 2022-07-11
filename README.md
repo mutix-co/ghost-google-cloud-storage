@@ -1,5 +1,6 @@
 # Ghost with Google Cloud Storage
 
+In current version of ghost(v5.2.3) storage split into three kinds of Adapters, image, media, file and we follow the default storage adapters(LocalStorageBase) to create same file structure in Google Cloud Storage (image in `content/image`, media in `content/media`, files in `content/files`)
 
 ## Usage
 
@@ -30,4 +31,4 @@ docker run -it --rm \
   mutix/ghost-google-cloud-storage:5
 ```
 
-3. upload images, media, files to test configuration
+3. see http://localhost:8080 and upload images, media, files to test configuration
