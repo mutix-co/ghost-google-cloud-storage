@@ -1,4 +1,4 @@
-FROM ghost:5 as base
+FROM ghost:5.7 as base
 
 ENV GHOST_INSTALL /var/lib/ghost
 ENV GHOST_CLOUD_STORAGE_ADAPTER /var/lib/ghost/content/adapters/storage
