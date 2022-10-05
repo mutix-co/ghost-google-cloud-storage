@@ -54,9 +54,9 @@ jobs:
     strategy:
       matrix:
         include:
-          - version: 5
+          - version: 5.17.1
             file: Dockerfile
-          - version: 5-alpine
+          - version: 5.17.1-alpine
             file: Dockerfile-alpine
     steps:
       -
